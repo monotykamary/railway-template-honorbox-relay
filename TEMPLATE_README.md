@@ -24,8 +24,8 @@ This template deploys the relay only. Your storefront and fulfillment workflow r
 ### Deployment Dependencies
 
 - [HonorBox](https://github.com/Honorboxx/honorbox)
-- [Webhook mode documentation](https://github.com/Honorboxx/honorbox/tree/v0.6.0/webhook-mode)
-- [MIT License](https://github.com/Honorboxx/honorbox/blob/v0.6.0/LICENSE)
+- [HonorBox v0.6.0 webhook mode documentation](https://github.com/Honorboxx/honorbox/tree/v0.6.0/webhook-mode)
+- [HonorBox v0.6.0 MIT License](https://github.com/Honorboxx/honorbox/blob/v0.6.0/LICENSE)
 
 ### Why Deploy the HonorBox Webhook Relay on Railway?
 
