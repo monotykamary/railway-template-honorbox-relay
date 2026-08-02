@@ -176,10 +176,11 @@ export function readBoundedBody(req, maxBytes = MAX_BODY_BYTES) {
       if (settled) return;
       size += chunk.length;
       if (size > maxBytes) {
-        // Stop reading and drop what we buffered; do not keep accepting bytes
-        // from an unauthenticated client only to reject them at the end.
+        // Stop buffering immediately, but keep draining the socket so Node can
+        // deliver the 413 response instead of resetting the connection.
+        chunks.length = 0;
         done({ tooLarge: true });
-        req.destroy();
+        req.resume();
         return;
       }
       chunks.push(chunk);

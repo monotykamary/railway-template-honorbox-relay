@@ -4,7 +4,7 @@ Deploy the official HonorBox Stripe webhook relay on Railway for near-instant pr
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/honorbox-webhook-relay?referralCode=ZqgrJ0)
 
-This repository packages the dependency-free relay from [Honorboxx/honorbox v0.5.1](https://github.com/Honorboxx/honorbox/releases/tag/v0.5.1) with a small Railway health-check adapter. It does not contain storefront products or fulfillment credentials.
+This repository packages the dependency-free relay from [Honorboxx/honorbox v0.6.0](https://github.com/Honorboxx/honorbox/releases/tag/v0.6.0) with a small Railway health-check adapter. It does not contain storefront products or fulfillment credentials.
 
 ## Required configuration
 
@@ -18,4 +18,4 @@ The relay verifies Stripe signatures, rejects stale requests, and dispatches onl
 
 ## Source and license
 
-The relay is copied verbatim from HonorBox v0.5.1 under the MIT License. `server.mjs` only adds `/health` and binds the upstream handler to Railway's port.
+The relay is based on HonorBox v0.6.0 under the MIT License. The Railway adapter adds `/health` and preserves the upstream 1 MiB request limit while draining oversized requests long enough to return HTTP 413 instead of resetting the connection.
